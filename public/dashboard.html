@@ -38,20 +38,37 @@
             border-radius: 20px;
             font-size: 0.9rem;
         }
+/* --- Menú Lateral (Sidebar) --- */
+#sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 70px;
+    background-color: var(--cncm-blue-dark);
+    color: white;
+    transition: all 0.3s ease; /* Animación suave */
+    z-index: 1000;
+}
 
-        /* --- Menú Lateral (Sidebar) --- */
-        #sidebar {
-            width: var(--sidebar-width);
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-            padding-top: 70px; /* Espacio para la navbar */
-            background-color: var(--cncm-blue-dark);
-            color: white;
-            transition: all 0.3s;
-            z-index: 1000;
-        }
+/* Cuando el sidebar está oculto, se mueve a la izquierda */
+#sidebar.collapsed {
+    margin-left: calc(var(--sidebar-width) * -1);
+}
+
+/* --- Contenido Principal --- */
+#content {
+    width: 100%;
+    padding: 90px 20px 20px 20px;
+    margin-left: var(--sidebar-width); /* Margen inicial igual al ancho del menú */
+    transition: all 0.3s ease; /* Debe tener la misma velocidad que el sidebar */
+}
+
+/* Cuando el sidebar se oculta, el contenido ocupa todo el ancho */
+#content.expanded {
+    margin-left: 0;
+}
 
         #sidebar.active {
             margin-left: calc(var(--sidebar-width) * -1);
@@ -70,13 +87,7 @@
             background-color: var(--cncm-blue-light);
         }
 
-        /* --- Contenido Principal --- */
-        #content {
-            width: 100%;
-            padding: 90px 20px 20px 20px;
-            margin-left: var(--sidebar-width);
-            transition: all 0.3s;
-        }
+        /* --- Menú Lateral (Sidebar) --- */
 
         #content.active {
             margin-left: 0;
