@@ -8,77 +8,61 @@
     
     <style>
         :root {
-            /* Definimos los colores institucionales como variables */
-            --cncm-blue-dark: #0D264A;   
-            --cncm-blue-light: #11458b;  
-            --cncm-red: #FF0000;         
+            --cncm-blue-dark: #0D264A;
+            --cncm-blue-light: #11458B;
+            --cncm-red: #FF0000;
         }
 
-        /* Usamos el azul oscuro para el fondo de la página */
         body {
             background-color: var(--cncm-blue-dark);
             height: 100vh;
         }
 
-        /* Personalizamos la tarjeta de login */
         .card {
             border: none;
             border-radius: 15px;
         }
 
-        /* Título del sistema en el azul más claro */
         .card-title {
             color: var(--cncm-blue-light);
             font-weight: bold;
         }
-
-        /* Botón principal usando el rojo de la escuela */
-        .btn-primary {
-            background-color: var(--cncm-red);
-            border-color: var(--cncm-red);
-        }
-
-        /* Efecto al pasar el mouse sobre el botón (un rojo más oscuro) */
-        .btn-primary:hover {
-            background-color: #cc0000;
-            border-color: #cc0000;
-        }
-
-        /* Personalización de los campos de texto al seleccionarlos */
-        .form-control:focus {
-            border-color: var(--cncm-blue-light);
-            box-shadow: 0 0 0 0.25rem rgba(17, 69, 88, 0.25);
+        
+        /* Estilo para el logo */
+        .logo-cncm {
+            max-width: 150px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
-<body class="d-flex align-items-center">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-5">
-                <div class="card shadow-lg p-4">
-                    <div class="card-body">
-                        <h2 class="text-center card-title mb-2">SISTEMA HAY</h2>
-                        <h5 class="text-center text-muted mb-4">CNCM</h5>
-                        
-                        <form action="/login" method="POST">
-                            <div class="mb-3">
-                                <label class="form-label text-secondary">Correo Institucional</label>
-                                <input type="email" name="correo" class="form-control form-control-lg" required placeholder="tu.correo@escuela.edu">
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label class="form-label text-secondary">Contraseña</label>
-                                <input type="password" name="password" class="form-control form-control-lg" required placeholder="••••••••">
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary btn-lg w-100 p-3 fs-5">
-                                Iniciar Sesión
-                            </button>
-                        </form>
-                    </div>
+<body class="d-flex align-items-center justify-content-center">
+
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
+        <div class="card-body text-center">
+            
+            <img src="assets/logo horizontal fondo transparente.png" alt="Logo CNCM" class="logo-cncm">
+            
+            <h3 class="card-title text-center mb-4">Administración</h3>
+            
+            <form>
+                <div class="mb-3 text-start">
+                    <label for="email" class="form-label">Correo Institucional</label>
+                    <input type="email" class="form-control" id="email" placeholder="tu.correo@cncm.edu.mx" required>
                 </div>
+                <div class="mb-3 text-start">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" placeholder="********" required>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-danger" style="background-color: var(--cncm-red);">Iniciar Sesión</button>
+                </div>
+            </form>
+            
+            <div class="mt-3 text-center">
+                <a href="#" class="text-muted small">¿Olvidaste tu contraseña?</a>
             </div>
         </div>
     </div>
+
 </body>
 </html>
