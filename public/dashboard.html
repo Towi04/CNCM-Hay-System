@@ -102,10 +102,18 @@
                 <img src="assets/logo horizontal fondo transparente.png" alt="CNCM">
             </a>
 
-            <div class="d-flex align-items-center gap-3">
-                <span class="plantel-badge d-none d-md-block">
-                    <i class="bi bi-geo-alt-fill"></i> Plantel: Salamanca
-                </span>
+            <div class="dropdown d-none d-md-block">
+    <button class="btn plantel-badge dropdown-toggle border-0" type="button" id="plantelSelector" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: var(--cncm-blue-light); color: white; border-radius: 20px;">
+        <i class="bi bi-geo-alt-fill me-1"></i> Plantel: <span id="plantelActual">Salamanca</span>
+    </button>
+    <ul class="dropdown-menu shadow" aria-labelledby="plantelSelector">
+        <li><h6 class="dropdown-header">Seleccionar Plantel</h6></li>
+        <li><a class="dropdown-item" href="#" onclick="cambiarPlantel('Salamanca')">Salamanca</a></li>
+        <li><a class="dropdown-item" href="#" onclick="cambiarPlantel('Celaya')">Celaya</a></li>
+        <li><a class="dropdown-item" href="#" onclick="cambiarPlantel('Guerrero')">Guerrero</a></li>
+        <li><a class="dropdown-item" href="#" onclick="cambiarPlantel('Fuentes')">Fuentes</a></li>
+    </ul>
+
 
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" id="userMenu" data-bs-toggle="dropdown">
@@ -163,6 +171,14 @@
                 $('#sidebar, #content').toggleClass('active');
             });
         });
+function cambiarPlantel(nombre) {
+    // Cambia el texto en el botón
+    document.getElementById('plantelActual').innerText = nombre;
+    
+    // Aquí podrías agregar una alerta o lógica para recargar datos en el futuro
+    console.log("Cambiando vista al plantel: " + nombre);
+}
+
     </script>
 </body>
 </html>
