@@ -7,13 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
-        :root {
-            --cncm-blue-dark: #0D264A;
-            --cncm-blue-light: #11458B;
-            --cncm-red: #FF0000;
-        }
-        body { background-color: var(--cncm-blue-dark); min-height: 100vh; }
-        .logo-cncm { width: 100%; max-width: 300px; height: auto; margin-bottom: 20px; }
+        <link rel="stylesheet" href="assets/css/style.css"> 
     </style>
 </head>
 <body>
