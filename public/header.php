@@ -10,4 +10,5 @@
         <link rel="stylesheet" href="assets/css/style.css"> 
     </style>
 </head>
-<body>
+<body class="<?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? '' : 'dashboard-body'; ?>">
+
